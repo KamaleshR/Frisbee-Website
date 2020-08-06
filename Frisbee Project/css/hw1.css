@@ -1,0 +1,145 @@
+body {
+    margin: 0 10px 10px 10px;
+    padding: 3px;
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    background-image: url("../images/flywheel.jpg");
+    /*since my css file is inside a subfolder, I have to comeout
+    of that subfolder and then access images folder and the image in it*/
+    background-color: #00aaee;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+
+nav a {
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    padding-top: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+    opacity: 0.3;
+    font-size: 18px;
+    margin: 20px;
+}
+
+nav a:link {
+    background-color: #ffffff;
+    transition-property: background;
+}
+
+nav a:visited,
+.active {
+    /*To make current page navigation link show*/
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+nav a:not(.active):hover {
+    background-color: #ffffff;
+    opacity: 1.0;
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    background: linear-gradient(to right, #ffffff 0%, #8fa154 50%);
+}
+
+header>nav>a:active {
+    background-color: #00ddee;
+    opacity: 1.0;
+}
+
+
+/*-----------------------------------Table Styling-------------*/
+
+.right table {
+    /*Styling table*/
+    margin-left: 10%;
+    font-weight: 700;
+    font-family: sans-serif, Helvetica, Narrow;
+    width: 80%;
+    font-size: 15px;
+    border-spacing: 3px;
+    /*border radius not included here becz I've included them for all 3 columns seperately as it is needed*/
+}
+
+.right table tr th {
+    /*table heading styling*/
+    border-top-right-radius: 2px;
+    /*2px border radius is hard to see , but that what is asked to be provided,so please zoom in*/
+    border-top-left-radius: 2px;
+    background: linear-gradient(#8fa154 0%, #808000 95%, #a6c933 20%);
+    padding: 2%;
+    color: #ffffff;
+}
+
+.right table tr td {
+    /*Table cell styling */
+    background-color: #c1e89d;
+    line-height: 350%;
+    text-align: center;
+    opacity: 0.6;
+    /*opacity 0.8 not providing good visual details in Mozilla, so opted 0.6*/
+    text-shadow: 0 0.1px 0.2px #000000;
+    transition-property: opacity, text-shadow, color;
+    color: #282c35;
+}
+
+.right table tr td:hover {
+    transition-duration: 0.1s;
+    transition-delay: 0s;
+    transition-timing-function: linear;
+    opacity: 1;
+    text-shadow: none;
+    color: #000000;
+}
+
+.right table tr td:first-child,
+th:first-child {
+    /*Styling first column */
+    text-align: left;
+    padding-left: 12px;
+    !important
+}
+
+
+/*----------Table Styling End----Positioning Content--------------------*/
+
+.right {
+    display: inline-block;
+    vertical-align: top;
+    /* if this line not used the text content goes few pixels below header*/
+    width: 75%;
+    font-size: 18px;
+}
+
+aside {
+    display: inline-block;
+    /*using inline-block, to make aside and section appear side by side. The problem
+    with using float is that it doesnt join header and aside , displaying both of them seperately,
+    which is not a desireed output for our assignment*/
+    background-color: #808000;
+    width: 22%;
+    height: 120vh;
+}
+
+img {
+    width: 80%;
+    /*Can use border-sizing for simplicity of math. But Ive manually calculated that , if we take 
+    100% of aside part, we need minimum 8%margin on both sides so total 16% needed for margin in horizontal direction.So total width of 20%(approx)
+    reserved for margin and remaining 80% is for width of element*/
+    display: block;
+    /*Ive put images in block display to make them display in vertical order*/
+    margin: 8%;
+    border: #000000 solid 2px;
+}
